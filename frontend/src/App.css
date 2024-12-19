@@ -1,21 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:wght@200;300;400;600;700&display=swap');
-
-:root{
-  --primary-color: #8a4baf;
-  --secondary-color: #5f357e;
-}
-
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 
-  font-family: 'Poppins', sans-serif;
-
+  font-family: Arial, sans-serif;
 }
 
 .common-btn {
-  background-color: var(--primary-color);
+  background-color: #8a4baf;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -26,7 +18,7 @@ body {
   margin-top: 10px;
 
   &:hover {
-    background-color: var(--secondary-color);
+    background-color: #5f357e;
   }
 
   @media (max-width: 768px) {

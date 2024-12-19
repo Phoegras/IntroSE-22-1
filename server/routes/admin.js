@@ -3,10 +3,7 @@ import { isAdmin, isAuth } from "../middlewares/isAuth.js";
 import {
   addLectures,
   createCourse,
-  createManyCourses,
-  modifyCourse,
   deleteCourse,
-  deleteManyCourses,
   deleteLecture,
   getAllStats,
   getAllUser,
@@ -16,12 +13,10 @@ import { uploadFiles } from "../middlewares/multer.js";
 
 const router = express.Router();
 
-router.post("/course/new", isAuth, isAdmin, uploadFiles, createCourse);
-router.post("/course/many", isAuth, isAdmin, createManyCourses);
-router.put("/course/:id", isAuth, isAdmin, modifyCourse);
+// router.post("/course/new", isAuth, isAdmin, uploadFiles, createCourse);
+router.post("/course/new", uploadFiles, createCourse);
 router.post("/course/:id", isAuth, isAdmin, uploadFiles, addLectures);
 router.delete("/course/:id", isAuth, isAdmin, deleteCourse);
-router.delete("/course", isAuth, isAdmin, deleteManyCourses);
 router.delete("/lecture/:id", isAuth, isAdmin, deleteLecture);
 router.get("/stats", isAuth, isAdmin, getAllStats);
 router.put("/user/:id", isAuth, updateRole);

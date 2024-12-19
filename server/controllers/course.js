@@ -22,32 +22,6 @@ export const getSingleCourse = TryCatch(async (req, res) => {
   });
 });
 
-// Add a course
-export const addCourse = TryCatch(async (req, res) => {
-  const { title, description, image, startTime, endTime, duration, category } = req.body;
-
-  if (!title || !description || !duration || !category) {
-    return res.status(400).json({ message: 'All fields except image, startTime and endTime are required.' });
-  }
-
-  const newCourse = new Courses({
-    title,
-    description,
-    image,
-    startTime,
-    endTime,
-    duration,
-    category
-  });
-
-  await newCourse.save();
-
-  res.status(201).json({
-    message: 'Course added successfully.',
-    course: newCourse,
-  });
-});
-
 export const fetchLectures = TryCatch(async (req, res) => {
   const lectures = await Lecture.find({ course: req.params.id });
 

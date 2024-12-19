@@ -15,27 +15,13 @@ const schema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    profile: {
-    firstName: String,
-    lastName: String,
-    phoneNumber: String,
-    dateOfBirth: Date,
-    gender: String,
-    address: String,
-    levelEducation: String,
-    typeEducation: String,
-    major: String,
-    faculty: String,
-    },
     role: {
       type: String,
       default: "user",
-      enum: ["user", "admin"],
     },
     mainrole: {
       type: String,
-      default: "student",
-      enum: ["lecturer", "student", "admin", "superadmin"],
+      default: "user",
     },
     subscription: [
       {

@@ -9,29 +9,31 @@ const schema = new mongoose.Schema({
     type: String,
     required: true,
   },
+
   image: {
-    type: String
+    type: String,
+    required: true,
   },
-  startTime: Date,
-  endTime: Date,
+  price: {
+    type: Number,
+    required: true,
+  },
   duration: {
     type: Number,
     required: true,
   },
-  resources: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Resources' }],
-  assignments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Assignment' }],
   category: {
     type: String,
     required: true,
   },
   createdBy: {
-    type: mongoose.Schema.Types.ObjectId, ref: 'User',
+    type: String,
+    required: true,
   },
   createdAt: {
     type: Date,
     default: Date.now,
   },
-  attenders: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
 });
 
 export const Courses = mongoose.model("Courses", schema);
